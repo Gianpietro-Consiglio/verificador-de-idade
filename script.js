@@ -5,11 +5,13 @@ button1.addEventListener('click',verificar)
 
 
 function verificar(){
+    var data = new Date()
+    var ano = data.getFullYear()
     var choice_nasc = qual_nasc()
     var choice_sexo = qual_botao()
-    var idade = 2024 - choice_nasc
+    var idade = ano - choice_nasc
     var imagem = window.document.getElementById('imagem')
-    if(choice_nasc >= 2025 || idade == 2024){
+    if(choice_nasc > ano || idade == ano){
         return alert('Preencha os dados corretamente!')
     }
     else if (idade <= 15){
